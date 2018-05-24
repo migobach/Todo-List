@@ -1,8 +1,9 @@
-<h1> Pages </h1>
-  <p><%= link_to 'New Page', new_page_path %></p>
+<h1 class="bottom"> To Do List </h1>
+  <button class="waves-effect orange darken-4 btn-large"><%= link_to 'New Item', new_page_path %></button>
   <% @pages.each do |page| %>
-  <h2><%= page.title %></h2>
-  <%= link_to 'Show Page', page_path(page) %>
-  <%= link_to 'Edit Page', edit_page_path(page) %>
-  <%= link_to 'Destroy Page', page, method: :delete %>
+  <h4><%= page.title %></h4>
+  <p><%= page.description %><p>
+  <%= link_to 'Show Page', page_path(page), {class: "button"} %>
+  <%= link_to 'Edit Page', edit_page_path(page), {class: "button"} %>
+  <%= link_to 'Destroy Page', page, {method: :delete, class: "button"} %>
 <% end %>
